@@ -1,101 +1,63 @@
+# Script de Processamento de Imagens
 
-    <h1>Image Processing Script</h1>
+Este script em Python foi projetado para processar imagens dentro de um diretório especificado. Ele oferece funcionalidades para redimensionar imagens e criar miniaturas mantendo as proporções e considerando as orientações das imagens.
 
-    <p>This Python script is designed to process images within a specified directory. It offers functionality to resize images and create thumbnails while maintaining aspect ratios and considering image orientations.</p>
+## Funções
 
-    <h2>Functions</h2>
+### `eh_imagem(nome_arquivo)`
 
-    <h3><code>eh_imagem(nome_arquivo)</code></h3>
-    <ul>
-        <li><strong>Description:</strong> Checks if a file has an image extension.</li>
-        <li><strong>Parameters:</strong>
-            <ul>
-                <li><code>nome_arquivo</code>: Name of the file.</li>
-            </ul>
-        </li>
-        <li><strong>Returns:</strong> <code>True</code> if the file has an image extension, otherwise <code>False</code>.</li>
-    </ul>
+- **Descrição**: Verifica se um arquivo possui uma extensão de imagem.
+- **Parâmetros**:
+  - `nome_arquivo`: Nome do arquivo.
+- **Retorna**: 
+  - `True` se o arquivo tiver uma extensão de imagem, caso contrário `False`.
 
-    <!-- Reduzir Foto Function -->
-    <h3><code>reduzir_foto(input_dir, output_dir, ext='.jpg')</code></h3>
-    <ul>
-        <!-- Description -->
-        <li><strong>Description:</strong> Resizes images within the specified input directory and saves them to the output directory.</li>
-        <!-- Parameters -->
-        <li><strong>Parameters:</strong>
-            <ul>
-                <li><code>input_dir</code>: Path to the directory containing the original images.</li>
-                <li><code>output_dir</code>: Path to the directory where resized images will be saved.</li>
-                <li><code>ext</code>: Extension for the output images (default is '.jpg').</li>
-            </ul>
-        </li>
-        <!-- Process -->
-        <li><strong>Process:</strong>
-            <ol>
-                <li>Retrieves a list of image files from the input directory.</li>
-                <li>Iterates through each image file, opens it, and adjusts orientation if necessary.</li>
-                <li>Resizes the image while maintaining the aspect ratio to fit within a maximum width of 3840 pixels.</li>
-                <li>Saves the resized image to the output directory with reduced quality.</li>
-            </ol>
-        </li>
-    </ul>
+### `reduzir_foto(input_dir, output_dir, ext='.jpg')`
 
-    <!-- Criar Thumbnail Function -->
-    <h3><code>criar_tumbnail(input_dir, output_dir, ext='.jpg')</code></h3>
-    <ul>
-        <!-- Description -->
-        <li><strong>Description:</strong> Creates thumbnails of images within the specified input directory and saves them to the output directory.</li>
-        <!-- Parameters -->
-        <li><strong>Parameters:</strong>
-            <ul>
-                <li><code>input_dir</code>: Path to the directory containing the original images.</li>
-                <li><code>output_dir</code>: Path to the directory where thumbnails will be saved.</li>
-                <li><code>ext</code>: Extension for the output thumbnails (default is '.jpg').</li>
-            </ul>
-        </li>
-        <!-- Process -->
-        <li><strong>Process:</strong>
-            <ol>
-                <li>Checks if the output directory exists; if not, creates it.</li>
-                <li>Retrieves a list of image files from the input directory.</li>
-                <li>Iterates through each image file, opens it, and creates a thumbnail with a fixed size of 290x290 pixels.</li>
-                <li>Saves the thumbnail image to the output directory with reduced quality.</li>
-            </ol>
-        </li>
-    </ul>
+- **Descrição**: Redimensiona imagens dentro do diretório de entrada especificado e as salva no diretório de saída.
+- **Parâmetros**:
+  - `input_dir`: Caminho para o diretório que contém as imagens originais.
+  - `output_dir`: Caminho para o diretório onde as imagens redimensionadas serão salvas.
+  - `ext`: Extensão para as imagens de saída (o padrão é '.jpg').
+- **Processo**:
+  1. Recupera uma lista de arquivos de imagem do diretório de entrada.
+  2. Itera através de cada arquivo de imagem, abre-o e ajusta a orientação, se necessário.
+  3. Redimensiona a imagem mantendo a proporção para se ajustar a uma largura máxima de 3840 pixels.
+  4. Salva a imagem redimensionada no diretório de saída com qualidade reduzida.
 
-    <!-- Play Function -->
-    <h3><code>play()</code></h3>
-    <ul>
-        <!-- Description -->
-        <li><strong>Description:</strong> Orchestrates the image processing operations.</li>
-        <!-- Process -->
-        <li><strong>Process:</strong>
-            <ol>
-                <li>Specifies the input directory and output directories for resized images and thumbnails.</li>
-                <li>Calls <code>reduzir_foto()</code> to resize images.</li>
-                <li>Prints a message indicating the completion of image resizing.</li>
-                <li>Calls <code>criar_tumbnail()</code> to create thumbnails.</li>
-            </ol>
-        </li>
-    </ul>
+### `criar_tumbnail(input_dir, output_dir, ext='.jpg')`
 
-    <h2>Usage</h2>
+- **Descrição**: Cria miniaturas das imagens dentro do diretório de entrada especificado e as salva no diretório de saída.
+- **Parâmetros**:
+  - `input_dir`: Caminho para o diretório que contém as imagens originais.
+  - `output_dir`: Caminho para o diretório onde as miniaturas serão salvas.
+  - `ext`: Extensão para as miniaturas de saída (o padrão é '.jpg').
+- **Processo**:
+  1. Verifica se o diretório de saída existe; caso contrário, o cria.
+  2. Recupera uma lista de arquivos de imagem do diretório de entrada.
+  3. Itera através de cada arquivo de imagem, abre-o e cria uma miniatura com tamanho fixo de 290x290 pixels.
+  4. Salva a miniatura no diretório de saída com qualidade reduzida.
 
-    <ol>
-        <li>Ensure that you have Python installed on your system.</li>
-        <li>Install the required dependencies using <code>pip install Pillow piexif</code>.</li>
-        <li>Place your images in the specified input directory.</li>
-        <li>Run the script, and it will process the images as per the defined functions.</li>
-    </ol>
+### `play()`
 
-    <h2>Note</h2>
+- **Descrição**: Orquestra as operações de processamento de imagens.
+- **Processo**:
+  1. Especifica o diretório de entrada e os diretórios de saída para imagens redimensionadas e miniaturas.
+  2. Chama `reduzir_foto()` para redimensionar imagens.
+  3. Imprime uma mensagem indicando a conclusão do redimensionamento das imagens.
+  4. Chama `criar_tumbnail()` para criar miniaturas.
 
-    <ul>
-        <li>The script supports images with extensions: 'png', 'jpg', 'JPG', 'PNG', and 'heic'.</li>
-        <li>It uses the Python Imaging Library (PIL) and piexif library for image processing and handling EXIF data.</li>
-        <li>Adjustments for image orientations are made based on EXIF metadata when available.</li>
-    </ul>
+## Uso
 
-    <p>Feel free to modify the script according to your specific requirements or integrate it into your projects.</p>
+1. Certifique-se de que você tenha o Python instalado no seu sistema.
+2. Instale as dependências necessárias usando `pip install Pillow piexif`.
+3. Coloque suas imagens no diretório de entrada especificado.
+4. Execute o script e ele processará as imagens conforme as funções definidas.
 
+## Observação
+
+- O script suporta imagens com as extensões: 'png', 'jpg', 'JPG', 'PNG' e 'heic'.
+- Ele utiliza a biblioteca Python Imaging Library (PIL) e a biblioteca piexif para o processamento de imagens e manipulação de dados EXIF.
+- Ajustes para as orientações das imagens são feitos com base nos metadados EXIF, quando disponíveis.
+
+Sinta-se à vontade para modificar o script de acordo com seus requisitos específicos ou integrá-lo aos seus projetos.
