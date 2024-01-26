@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Processing Script</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 2px 4px;
-            border-radius: 4px;
-            font-size: 90%;
-        }
-        ul {
-            padding-left: 20px;
-        }
-    </style>
-</head>
-<body>
+
     <h1>Image Processing Script</h1>
 
     <p>This Python script is designed to process images within a specified directory. It offers functionality to resize images and create thumbnails while maintaining aspect ratios and considering image orientations.</p>
@@ -128,5 +99,3 @@
 
     <p>Feel free to modify the script according to your specific requirements or integrate it into your projects.</p>
 
-</body>
-</html>
